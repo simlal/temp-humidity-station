@@ -26,7 +26,7 @@ concepts of computer science. The project is based on the following requirements
 ### Personal objectives :dart:
 - [x] Introduction to software design and development on embedded systems with the Raspberry Pi Pico platform.
 - [x] Learn to read and understand datasheets and reference manuals from the sensord manufacturerd and the Raspberry Pi Pico C/C++ SDK [[2]](#2)[[3]](#3).
-- [x] Write custom C drivers for the DHT22 sensor (<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" width=14> [[4]](#4)) and the LCD1602 display (<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" width=14> [[5]](#5)).
+- [x] Write custom C drivers for the DHT22 sensor (Repo <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" width=16/> [[4]](#4)) and the LCD1602 display (Repo <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" width=16> [[5]](#5)). 
 - [x] Learn how to use the I2C and GPIO protocols on the Raspberry Pi Pico W.
 
 ## Hardware components :wrench:
