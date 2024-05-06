@@ -26,8 +26,8 @@ concepts of computer science. The project is based on the following requirements
 ### Personal objectives :dart:
 - [x] Introduction to software design and development on embedded systems with the Raspberry Pi Pico platform.
 - [x] Learn to read and understand datasheets and reference manuals from the sensord manufacturerd and the Raspberry Pi Pico C/C++ SDK [[2]](#2)[[3]](#3).
-- [x] Write custom C drivers for the DHT22 sensor and the LCD1602 display.
-- [x] Learn how to use the I2C and GPIO protocols on the Raspberry Pi Zero W.
+- [x] Write custom C drivers for the DHT22 sensor (<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" width=14> [[4]](#4)) and the LCD1602 display (<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" width=14> [[5]](#5)).
+- [x] Learn how to use the I2C and GPIO protocols on the Raspberry Pi Pico W.
 
 ## Hardware components :wrench:
 - Raspberry Pi Pico W microcontroller
@@ -35,6 +35,7 @@ concepts of computer science. The project is based on the following requirements
 - LCD1602 display
 - Breadboard
 - Jumper wires
+
 All materials purchased from TODO.
 <!-- TODO Hardware diagram -->
 
@@ -48,5 +49,9 @@ TODO SOFTWARE DIAGRAMS
 <a id="2">[2]</a> **Raspberry Pi Pico C/C++ SDK**. Libraries and tools for C/C++ development on RP2040 microcontrollers. Available at: https://datasheets.raspberrypi.org/pico/raspberry-pi-pico-c-sdk.pdf.
 
 <a id="3">[3]</a> **pico-sdk**. GitHub repository with the Raspberry Pi Pico SDK. Available at: https://github.com/raspberrypi/pico-sdk
+
+<a id="4">[4]</a> **DHT22_Pico_C-driver**. GitHub repository with the custom C driver for the DHT22 sensor. Available at: https://github.com/simlal/DHT22_Pico_C-driver
+
+<a id="5">[5]</a> **LCD1602-I2C_Pico_C-driver**. GitHub repository with the custom C driver for the LCD1602 display with I2C protocol. Available at: https://github.com/simlal/LCD1602-I2C_Pico_C-driver
 
 
