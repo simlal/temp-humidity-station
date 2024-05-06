@@ -44,7 +44,7 @@ TODO SOFTWARE DIAGRAMS
 
 ## References :books:
 <!-- As numbered footnotes-->
-<a id="1">[1]</a> **Making Embedded Systems** Design Patterns for Great Software. Elecia White. O'Reilly Media, 2024. ISBN: 978-1-098-15154-6. Available at: https://www.oreilly.com/library/view/programming-embedded-systems/0596009836/ 
+<a id="1">[1]</a> **Making Embedded Systems** Design Patterns for Great Software. Elecia White. O'Reilly Media, 2024. ISBN: 978-1-098-15154-6. Available at: https://www.oreilly.com/library/view/making-embedded-systems/9781098151539/ 
 
 <a id="2">[2]</a> **Raspberry Pi Pico C/C++ SDK**. Libraries and tools for C/C++ development on RP2040 microcontrollers. Available at: https://datasheets.raspberrypi.org/pico/raspberry-pi-pico-c-sdk.pdf.
 
