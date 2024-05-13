@@ -63,19 +63,30 @@ Take advantage of the Pico W microcropressor's 📡 chip and write a custom **we
 
 ---
 
-<h2>📅 Project timeline</h2>
+<h2>📅 Project timeline - <span style="font-weight: normal;">(1/2)</span></h2>
 
-- Mid-term presentation (June 12<sup>th</sup>)
-    - Write **System diagram** and **flowchart** for the project
-    - **Choosing** and **understanding** hardware
-    - Setup **development environment** and **toolchain**
-    - Start **writing** the DHT22 driver
+**Theoritical concepts**
+- Read a chapter of the book every week
+<br>
 
-- End of session presentation: (TBD)
-    - **Finish** the DHT22 driver
-    - **Write** the LCD1602 driver
-    - **Integrate** the drivers and **test** the system
-    - (OPTIONAL) Write a **web server** to display the data
+**Applied Project**
+- Write **System diagram** and **flowchart** for the project
+- **Choosing** and **understanding** hardware
+- Setup **development environment** and **toolchain**
+- Start **writing** the DHT22 driver
+
+--- 
+<h2>📅 Project timeline - <span style="font-weight: normal;">End-of-term objectives</span></h2>
+
+**Theoritical concepts**
+Continue reading the book past the applied objectives.
+<br>
+
+**Applied project**
+- **Finish** the DHT22 driver
+- **Write** the LCD1602 driver
+- **Integrate** the drivers and **test** the system
+- (OPTIONAL) Write a **web server** to display the data
 
 ---
 
@@ -98,3 +109,4 @@ TODO ADD STATIC FILE
 
 ---
 
+    
