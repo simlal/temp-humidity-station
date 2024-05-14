@@ -19,7 +19,7 @@ paginate: true
 
 <h2>📖 Project overview (1/2) - <span style="font-weight: normal;">Read 'Making Embedded Systems' by Elecia White</span></h2>
 
-**Making Embedded Systems** 2nd edition by Elecia White <img src="./images/mes_oreilly_cover_white_2024.jpg" width="100" style="float: right;">
+**Making Embedded Systems** 2nd edition by Elecia White <img src="https://learning.oreilly.com/library/cover/9781098151539/250w/" width="100" style="float: right;">
 
 <u>Book overview</u>:
 - **Introduction** to embedded systems architecture and design
@@ -29,7 +29,7 @@ paginate: true
 
 ---
 
-<h2>🛠️ Project overview (2/2) - <span style="font-weight: normal;">Apply the concepts from 1<sup>st</sup> half of reference book</span></h2>
+<h2><img src="https://em-content.zobj.net/source/google/387/hammer-and-wrench_1f6e0-fe0f.png" width=60px> Project overview (2/2) - <span style="font-weight: normal;">Apply the concepts from 1<sup>st</sup> half of reference book</span></h2>
 
 Make a **Temperature** 🌡️ and **humidity** 💧 station with DHT22 sensor and LCD1602 display on Raspberry Pi Pico W microconstroller.
 
@@ -42,7 +42,7 @@ Take advantage of the Pico W microcropressor's 📡 chip and write a custom **we
 
 ---
 
-<h2>💬 Project overview (3/3) - <span style="font-weight: normal;">Present and apply relevant concepts from the main reference</span></h2>
+<h2><img src="https://em-content.zobj.net/source/google/387/left-speech-bubble_1f5e8-fe0f.png" width=60px> Project overview (3/3) - <span style="font-weight: normal;">Present and apply relevant concepts from the main reference</span></h2>
 
 <u><strong>Relevant concepts</u></strong> (from the 1<sup>st</sup> half of the book):
 - Create **system diagram** and **flowchart** for the project (ch. 2)
@@ -53,7 +53,7 @@ Take advantage of the Pico W microcropressor's 📡 chip and write a custom **we
 
 ---
 
-<h2>🎯 Project goals</h2>
+<h2><img src="https://em-content.zobj.net/source/google/387/direct-hit_1f3af.png" width=60px> Project goals</h2>
 
 1. **Understand** the basics of embedded systems and drivers.
 2. **Learn** to work with I/O devices on a microcontroller.
@@ -63,7 +63,7 @@ Take advantage of the Pico W microcropressor's 📡 chip and write a custom **we
 
 ---
 
-<h2>📅 Project timeline - <span style="font-weight: normal;">(1/2)</span></h2>
+<h2><img src="https://em-content.zobj.net/source/google/387/calendar_1f4c5.png" width=60px> Project timeline - <span style="font-weight: normal;">(1/2)</span></h2>
 
 **Theoritical concepts**
 - Read a chapter of the book every week
@@ -76,7 +76,7 @@ Take advantage of the Pico W microcropressor's 📡 chip and write a custom **we
 - Start **writing** the DHT22 driver
 
 --- 
-<h2>📅 Project timeline - <span style="font-weight: normal;">End-of-term objectives</span></h2>
+<h2><img src="https://em-content.zobj.net/source/google/387/calendar_1f4c5.png" width=60px> Project timeline - <span style="font-weight: normal;">End-of-term objectives</span></h2>
 
 **Theoritical concepts**
 Continue reading the book past the applied objectives.
@@ -94,18 +94,18 @@ BREADBOARD IMAGE HERE
 
 ---
 
-<h2> 📋 System diagram</h2>
+<h2><img src="https://em-content.zobj.net/source/google/387/clipboard_1f4cb.png" width=60px> System diagram</h2>
 
 TODO ADD STATIC FILE
 
 ---
 
-<h2> ⚙️ Hardware Components</h2>
+<h2><img src="https://em-content.zobj.net/source/google/387/gear_2699-fe0f.png" width=60px> Hardware Components</h2>
 
 
 ---
 
-<h2> 🛠️ Development environment</h2>
+<h2><img src="https://em-content.zobj.net/source/google/387/hammer-and-wrench_1f6e0-fe0f.png" width=60px> Development environment</h2>
 
 ---
 
