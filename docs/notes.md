@@ -96,3 +96,32 @@ Replace the view with a file on external storage, so that we can test the system
 
 -> View can be DAC/ADC, model can be a filter, controller can be a driver that reads the ADC and writes to the DAC.
 
+## Chapter 3: Hardware
+### Project flow and design overview
+Waterfall style in ideal case because of step dependendies.
+
+#### Hardware design
+Hardware team creates a schematic and PCB layout. The schematic is a graphical representation of the components and their connections. All the components on linked to header of processor = BOM (Bill of Materials). The PCB layout is a graphical representation of the physical layout of the components on the PCB which gets assembled into kits.
+
+**Schematic -> PCB layout -> BOM -> Kits/PCBA -> Hardware tests -> Board bringup**
+
+#### Reading a datasheet
+
+**Overview:**
+API manuals for the peripherals. Contains info on how to use the peripheral, register map, and electrical characteristics. Contains info on how to use the peripheral, register map, and electrical characteristics. READ THE MAIN DESCRIPTION!
+
+**Sections for hardware eng.:**
+*TO SKIP*:
+absolut max ratings, recommended operating conditions, electrical characteristics, package information, layout and mechanical information.
+- Pinout: 
+Shows the pinout of the device and the functions of each pin. bars == active low (on when voltage low with modifier in front of the signal name)
+- Pin description:
+Description of each pin and its function.
+- Performance characteristics:
+i.e. rated to work in temp range (debugging if periph next to hot component)
+- Sample Schematics:
+~ ee. version for driver code 
+
+**Sections for software eng.:**
+
+
