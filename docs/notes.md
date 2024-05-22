@@ -113,15 +113,14 @@ API manuals for the peripherals. Contains info on how to use the peripheral, reg
 **Sections for hardware eng.:**
 *TO SKIP*:
 absolut max ratings, recommended operating conditions, electrical characteristics, package information, layout and mechanical information.
-- Pinout: 
+- **Pinout**: 
 Shows the pinout of the device and the functions of each pin. bars == active low (on when voltage low with modifier in front of the signal name)
-- Pin description:
+- **Pin description**:
 Description of each pin and its function.
-- Performance characteristics:
+- **Performance characteristics**:
 i.e. rated to work in temp range (debugging if periph next to hot component)
-- Sample Schematics:
+- **Sample Schematics**:
 ~ ee. version for driver code 
 
 **Sections for software eng.:**
-
 
