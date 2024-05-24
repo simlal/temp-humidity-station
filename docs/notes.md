@@ -4,9 +4,11 @@ See the [project README](../README.md) for more information.
 ## Chapter 2: Creating a system architecture
 ### Diagrams
 - **Block diagram**: Shows the system as a whole, with each block representing a component or subsystem. Make both a hardware and software block diagram with more or less details
+![Example bd](./img/block_diagram.jpg)
 - **Organigram**: Horiz/Vertical-type of block diagram, showing the hierarchy of the system and shared compo. It is useful to show the relationships between the different components
+![Example od](./img/org_diagram.jpg)
 - **Layered diagram**: Shows the system as a stack of layers, with each layer representing a level of abstraction. It is useful to show the different levels of abstraction in the system and each layer's interaction with upper/lower layers based on "touching".
-
+![Example ld](./img/soft_layering_diag.jpg)
 ### Design principles
 - **Encapsulation**: Hide the internal details of a component and only expose the necessary interfaces. It is useful to protect the component from unwanted access and to make it easier to change the internal implementation without affecting the rest of the system.
 We can later refactor if needed without affecting relationships/comms.
@@ -17,9 +19,11 @@ We can later refactor if needed without affecting relationships/comms.
     - Read (reads data from the device)
     - Write (writes data to the device)
     - IOCTL (Everything not covered by rest of interface i.e. custom commands)
+![Example of driver interface](./img/interfaces_example.jpg)
 
 Driver == part of the kernel. If no OS, still use Linux-like driver model with kernel interface.
 - **Adapter Pattern**: Convert the interface of a component into another interface that the client expects. See example with hardware adaptee and software adapter.
+![adapter](./img/adapter_pattern.jpg)
 
 ### Essential interfaces
 #### Logging interface
@@ -88,6 +92,8 @@ Separation of concerns between the model (data), view (presentation), and contro
 - **Model :** Data and business logic. Raw data + algorithms == something useful.
 - **Controller :** Mediator/glue between the view and the model. Handles how to get input from view to model for proc and processed data back to view.
 
+![mvc overview](./img/mvc_overvview.jpg)
+
 *Complexity of the controller:*
 Controller enbales model/view separation by providing services to the view and model (e.g. translate input to an event in the model). Can have different flow patterns (circular, model receives from controller only, translator, model-view no controller). SEE p.35
 
@@ -99,17 +105,19 @@ Replace the view with a file on external storage, so that we can test the system
 ## Chapter 3: Hardware
 ### Project flow and design overview
 Waterfall style in ideal case because of step dependendies.
+![timeline waterfall](./img/waterfall_process.jpg)
 
 #### Hardware design
 Hardware team creates a schematic and PCB layout. The schematic is a graphical representation of the components and their connections. All the components on linked to header of processor = BOM (Bill of Materials). The PCB layout is a graphical representation of the physical layout of the components on the PCB which gets assembled into kits.
 
 **Schematic -> PCB layout -> BOM -> Kits/PCBA -> Hardware tests -> Board bringup**
 
-#### Reading a datasheet
+### Reading a datasheet
 
 **Overview:**
 API manuals for the peripherals. Contains info on how to use the peripheral, register map, and electrical characteristics. Contains info on how to use the peripheral, register map, and electrical characteristics. READ THE MAIN DESCRIPTION!
 
+#### For harware engineers
 **Sections for hardware eng.:**
 *TO SKIP*:
 absolut max ratings, recommended operating conditions, electrical characteristics, package information, layout and mechanical information.
@@ -122,5 +130,25 @@ i.e. rated to work in temp range (debugging if periph next to hot component)
 - **Sample Schematics**:
 ~ ee. version for driver code 
 
+#### For software engineers
 **Sections for software eng.:**
 
+- theory of information:
+Overview of the peripheral and how it works.
+
+- timing diagrams:
+Shows the timing of the signals and how they relate to each other. Also shows different modes of operation.
+![Example timing diag](./img/timing_diag_example.jpg)
+
+- errata:
+Fix comparing to original datasheets.
+
+- Absolute max ratings:
+Max ratings for various parameters (e.g. voltage, current, temperature). Exceeding these ratings can damage the device.
+
+**Choice based on the datasheet:**
+Iterative process. Look for performance, power, cost, and availability. Filter based on needs of product.
+
+Make a feature summary based on final choice.
+
+#### Processor selection
