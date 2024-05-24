@@ -3,6 +3,7 @@ pkgs.mkShell {
     buildInputs = [
         pkgs.marp-cli
         pkgs.chromium
+        pkgs.jpegoptim
     ];
 
     shellHook = ''
