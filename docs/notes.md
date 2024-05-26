@@ -152,3 +152,31 @@ Iterative process. Look for performance, power, cost, and availability. Filter b
 Make a feature summary based on final choice.
 
 #### Processor selection
+
+Documents to look at:
+- *User manual*: Lots of details. Read intro. Will share info accross processor families i.e. STM32F10x
+- *Dev kit manual:* Setup compiler, debugger, and IDE recommended with documentation. Helps to get started quickly and docs more software oriented.
+- *Getting started slides:* Generic overview of the processor. Good for quick overview and processor seleciton
+- *Application Notes:* Detailed info on how to use the processor with code examples. Good for specific use cases.
+- *wikis/forums:* Community support. 
+- *Datasheets:* Detailed info on the processor. More for hardware eng.
+- *errata:* errors in the datasheet.
+
+#### Reading a schematic
+
+*Overview*: 
+- Shows the components and their connections.
+- Look for blocks of textual data == comments from electrical eng.
+- Components might not match in terms of numbering. Schematic contains info on how to connect the components together vs not just the layering on the PCB.
+
+Reading order for SE:
+1. Processor: usually biggest block in diagram. Look for connections to other components.
+2. Memory: SRAM, Flash, EEPROM. Usually 8 address lines and 16 data lines. Some new processor have enough mem to not need external mem.
+3. Power: 2 pins for power and ground.
+4. Debugging: JTAG/SWD. Look for connections to the processor.
+5. Communication: RS232 (serial port), USB/LCD (net labels) 
+
+**Most important non-boxed components:**
+- LEDS, switches, buttons
+- Resistors (pullups the voltage to a certain level). pullups high when processor isnt driving the line. May have internal pullups for default state
+p.63
