@@ -5,10 +5,15 @@
 # Run the nix-shell to trigger env setup to trigger build
 # nix-shell
 
- # Build the presentation slides
+
+
+# Cleanup previous builds
 DOCS_DIR=$(pwd)/docs
 if [[ ! -d $DOCS_DIR ]]; then
     mkdir docs
+else
+    rm -f $DOCS_DIR/*.html
+    rm -f $DOCS_DIR/*.pdf
 fi
 
 # Building the html and pdf decks with marp/node
