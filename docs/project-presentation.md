@@ -1,6 +1,6 @@
 ---
 marp: true
-theme: gaia
+theme: default
 class: invert
 paginate: true
 ---
@@ -26,6 +26,8 @@ paginate: true
 - How to work with various **I/O** devices (sensor, display, etc.)
 - Learn how to **optimize** and **debug** within resource constraints
 - **Advanced** topics like **RTOS**, **networking**, **security**, etc.
+
+<font size="4">White, Elecia. Making Embedded Systems. 2nd ed., O'Reilly Media.</font>
 
 ---
 
@@ -90,7 +92,132 @@ Continue reading the book past the applied objectives.
 
 ---
 
-BREADBOARD IMAGE HERE
+<h2><img src="https://em-content.zobj.net/source/google/387/person-raising-hand_1f64b.png" width=60px> What are embedded systems?</h2>
+
+- **Dedicated** computing devices that are part of a larger system. They are designed to perform a specific task or set of tasks.
+
+- Often **resource-constrained** (sometimes < 1Kb of RAM and CPU < 1MHz).
+
+- Need to be **reliable** and operate in **real-time**.
+
+- Some might have **no OS** or a **real-time OS**.
+
+<strong><u>Examples</u></strong>
+IoT devices (smart <img src="https://em-content.zobj.net/source/google/387/television_1f4fa.png" width=40px> <img src="https://em-content.zobj.net/source/google/387/watch_231a.png" width=40px>), game controllers <img src="https://em-content.zobj.net/source/google/387/video-game_1f3ae.png" width=40px>, medical devices <img src="https://em-content.zobj.net/source/google/387/ambulance_1f691.png" width=40px> etc.
+
+---
+
+<h2><img src="https://em-content.zobj.net/source/google/387/gear_2699-fe0f.png" width=60px> Typical hardware components</h2>
+
+<u>**Microcontroller** (CPU, RAM, ROM, I/O)</u>
+The **brain** of the system. It executes the program and interacts with the peripherals.
+
+<u>**Peripherals** (I/O devices)</u>
+Input and output devices that interact with the environment. Sensors, displays, motors, etc.
+
+<u>**Power supply**</u>
+Provides power to the system. Can be a battery, USB, etc.
+
+<u>**Communication interfaces**</u>
+Ways to communicate with the system. Serial, I2C, SPI, etc.
+
+
+---
+
+<h2><img src="https://em-content.zobj.net/source/google/387/woman-technologist_1f469-200d-1f4bb.png" width=60px> Hardware and software design and integration</h2>
+
+**Ideal Workflow:**
+1. *Hardware:* SysDesign/Schematics -> Printed Circuit Board (PCB) -> Assembly -> Board bring-up
+2. *Software:* Read datasheets -> Write drivers -> Write application code
+3. *Integration:* Test and debug -> Optimize -> Repeat
+4. *Deployment:* Production -> Maintenance
+
+Both software and hardware/electrical engineers need to work together to design and integrate the system.
+
+<br>
+<font size="4">White, Elecia. Making Embedded Systems. 2nd ed., O'Reilly Media.</font>
+
+---
+
+<h2><img src="https://em-content.zobj.net/source/google/387/thermometer_1f321-fe0f.png" width=60px> Weather station project hardware design <span style="font-weight: normal;">(1/2)</span></h2>
+
+**Weather station** that displays **temperature and humidity** on an **LCD screen** (custom drivers) on a **Raspberry Pi Pico W** microcontroller.
+
+**Components:**
+- **DHT22 sensor**: Tempeature and humidity sensor with proprietary protocol (DHT22)
+- **LCD1602 display**: Small 2.5" LCD display with I2C communication interface
+- **Raspberry Pi Pico W microcontroller**: Microcontroller with RP2040 chip and WiFi capabilities
+- Breadboard, jumper wires, resistors, etc.
+
+<font size="3">Adafruit. "DHT22 Temperature-Humidity Sensor." Adafruit Learning System, 2021.</font>
+<font size="3">LCD1602 Display. "LCD1602 Display." RoHS, 2021.</font>
+<font size="3">Raspberry Pi Foundation. "Raspberry Pi Pico." Raspberry Pi, 2021.</font>
+
+---
+<h2><img src="https://em-content.zobj.net/source/google/387/thermometer_1f321-fe0f.png" width=60px> Weather station project hardware design <span style="font-weight: normal;">(2/2)</span></h2>
+
+<!-- TODO DIAGRAM OF HARDWARE + I/O -->
+
+---
+
+<h2> <img src="https://em-content.zobj.net/source/google/387/thermometer_1f321-fe0f.png" width=60px> Software architecture <span style="font-weight: normal;"> - Overview</span></h2>
+
+<!-- TODO various diagrams of software design -->
+
+---
+
+
+---
+<!-- USE LATER -->
+<h2><img src="https://em-content.zobj.net/source/google/387/loudspeaker_1f4e2.png" width=60px> Drivers and communication protocols</h2>
+
+**Drivers**
+- Software that allows the microcontroller to interact with peripherals.
+- They abstract the hardware and provide a simple interface for the application code.
+
+**Communication protocols**
+- A set of rules that define how devices communicate with each other.
+- Examples: I2C, SPI, UART, etc.
+
+
+---
+<!-- USE LATER -->
+
+<h2><img src="https://em-content.zobj.net/source/google/387/timer-clock_23f2-fe0f.png" width=60px> I/O and interrupts</h2>
+
+**Input/Output (I/O)**
+- **Input**: Reading data from the environment (sensors, switches, etc.)
+- **Output**: Sending data to the environment (displays, motors, etc.)
+
+**Interrupts**
+- A way for the microcontroller to respond to events in real-time.
+- The microcontroller can stop what it's doing and handle the interrupt.
+
+
+---
+
+<h2>Model view controller in embedded systems</h2>
+<!-- USE LATER -->
+
+
+<div>
+    <p style="float: left; width: 60%; text-align: left;">Often, embedded systems are designed using the <strong>Model-View-Controller</strong> (MVC) pattern. This pattern separates the system into three main components:</p>
+    <img style="float: right; width: 35%;" src="./img/mvc_overview.jpg">
+</div>
+
+- **Model**: The data and logic of the system.
+- **View**: The user interface.
+- **Controller**: The logic that connects the model and the view. It processes user input and updates the model and view accordingly.
+
+<font size="4">White, Elecia. Making Embedded Systems. 2nd ed., O'Reilly Media.</font>
+
+---
+
+
+
+---
+<h2><img src="https://em-content.zobj.net/source/google/387/hammer-and-wrench_1f6e0-fe0f.png" width=60px> Tools and technology</h2>
+
 
 ---
 
