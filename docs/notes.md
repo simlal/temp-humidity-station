@@ -92,7 +92,7 @@ Separation of concerns between the model (data), view (presentation), and contro
 - **Model :** Data and business logic. Raw data + algorithms == something useful.
 - **Controller :** Mediator/glue between the view and the model. Handles how to get input from view to model for proc and processed data back to view.
 
-![mvc overview](./img/mvc_overvview.jpg)
+![mvc overview](./img/mvc_overview.jpg)
 
 *Complexity of the controller:*
 Controller enbales model/view separation by providing services to the view and model (e.g. translate input to an event in the model). Can have different flow patterns (circular, model receives from controller only, translator, model-view no controller). SEE p.35
