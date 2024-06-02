@@ -209,18 +209,23 @@ Reprogram the flash memory with a new program using the USB bootloader.
 
 ---
 
-<h2><img src="https://em-content.zobj.net/source/google/387/memo_1f4dd.png" width=60px> Setting up the development environment <span style="font-weight: normal;"> - Hello World!</span></h2>
+<h2><img src="https://em-content.zobj.net/source/google/387/memo_1f4dd.png" width=60px> Setting up the development environment <span style="font-weight: normal;">(Hello World!)</span></h2>
 
-**Steps and Demo:**
+**Steps**
 1. **Download** and **install** the Pico C/C++ SDK from <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" width=30px>
 2. Install the **toolchain**: `CMake` and GCC cross compiler `gcc-arm-embedded` (Explain with `nix-shell`)
-3. Create a **hello_world** project and use the SDK (`pico_sdk_import.cmake` script and `CMakeLists.txt` file)
-4. Compile a simple hello world program and **flash** it to the Pico W microcontroller.
-``` C
+3. Create a **hello_usb** project by use the SDKs provided libs (configure c/cpp compiler and include in IDE)
+4. Compile with the `CMakeLists.txt` and `pico_sdk_import.cmake` scripts. Automated with custom `picow-build.sh` script.
+5. **Flash** the program to the Pico W microcontroller using the USB bootloader.
 
-```
+**DEMO <img src="https://em-content.zobj.net/source/google/387/man-technologist_1f468-200d-1f4bb.png" width=60px>!**
 
+<font size="3">Raspberry Pi Foundation. [pico-sdk](https://github.com/raspberrypi/pico-sdk). GitHub Repository, 2024.</font>
 
+---
+<!-- Gear icon and h2 -->
+<h2><img src="https://em-content.zobj.net/source/google/387/gear_2699-fe0f.png" width=60px> Basic breadboard with Pico W controller <span style="font-weight: normal;">(Hello World!)</span></h2>
+TODO
 
 ---
 
