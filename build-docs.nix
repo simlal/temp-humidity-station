@@ -7,9 +7,19 @@ pkgs.mkShell {
     ];
 
     shellHook = ''
+        echo "Compressing images with jpegoptim..."
+        ./compress-jpgs.sh
+        if [ $? -eq 1 ];then
+            echo "Image compression failed. Try again."
+            exit 1
+        else
+            echo "Image compression successful!"
+        fi
+
         echo "Entered nix-shell with marp-cli!"
         echo "Building the docs with marp...\n"
-        ./build-docs.sh
+        # ./build-docs.sh
+        
 
         # Check for successfull marp build
         if [ $? -eq 1 ];then
