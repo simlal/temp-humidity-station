@@ -139,14 +139,14 @@ Both software and hardware/electrical engineers need to work together to design 
 
 ---
 
-<h2><img src="https://em-content.zobj.net/source/google/387/thermometer_1f321-fe0f.png" width=60px> Weather station project hardware design <span style="font-weight: normal;">(1/2)</span></h2>
+<h2><img src="https://em-content.zobj.net/source/google/387/thermometer_1f321-fe0f.png" width=60px> Weather station project hardware design</h2>
 
 **Weather station** that displays **temperature and humidity** on an **LCD screen** (custom drivers) on a **Raspberry Pi Pico W** microcontroller.
 
 **Components:**
+- **Raspberry Pi Pico W microcontroller**: Microcontroller with RP2040 chip and WiFi capabilities
 - **DHT22 sensor**: Tempeature and humidity sensor with proprietary protocol (DHT22)
 - **LCD1602 display**: Small 2.5" LCD display with I2C communication interface
-- **Raspberry Pi Pico W microcontroller**: Microcontroller with RP2040 chip and WiFi capabilities
 - Breadboard, jumper wires, resistors, etc.
 
 <font size="3">Adafruit. "DHT22 Temperature-Humidity Sensor." Adafruit Learning System, 2021.</font>
@@ -154,13 +154,77 @@ Both software and hardware/electrical engineers need to work together to design 
 <font size="3">Raspberry Pi Foundation. "Raspberry Pi Pico." Raspberry Pi, 2021.</font>
 
 ---
-<h2><img src="https://em-content.zobj.net/source/google/387/thermometer_1f321-fe0f.png" width=60px> Weather station project hardware design <span style="font-weight: normal;">(2/2)</span></h2>
+<h2><img src="https://em-content.zobj.net/source/google/387/robot_1f916.png" width=60px> Pico W Microcontroller <span style="font-weight: normal;"> - Datasheet (DS) overview</span></h2>
 
-<!-- TODO DIAGRAM OF HARDWARE + I/O -->
+**Datasheet overview and Pinout** 
+<div style="display: flex; justify-content: space-between;">
+    <div style="width: 50%;">
+        <ul>
+            <li>RP2040 microcontroller (2MB flash MEM)</li>
+            <li>Dual-core ARM Cortex-M0+ processor (133MHz)</li>
+            <li>26 GPIO pins (23 digital + 3 ADC)</li>
+            <li>Micro USB-B for power and data</li>
+            <li>SRAM: 264KB</li>
+            <li>2.4GHz WiFi and Bluetooth 5.0</li>
+            <li>Comms: SPI, I2C, UART, etc.</li>
+        </ul>
+    </div>
+    <img src="https://www.raspberrypi.com/documentation/microcontrollers/images/picow-pinout.svg" width=400px>
+</div>
+<font size="3">Raspberry Pi Foundation. "Raspberry Pi Pico-W Datasheet." Raspberry Pi, 2024.</font>
 
 ---
 
-<h2> <img src="https://em-content.zobj.net/source/google/387/thermometer_1f321-fe0f.png" width=60px> Software architecture <span style="font-weight: normal;"> - Overview</span></h2>
+<h2><img src="https://em-content.zobj.net/source/google/387/robot_1f916.png" width=60px> Pico W Microcontroller <span style="font-weight: normal;"> - DS Applications information (1/2) </span></h2>
+
+**Programming the flash**
+Reprogram the flash memory with a new program using the USB bootloader.
+
+**GPIO pins and ADC**
+- Each pin can be configured as a digital input/output, analog input, or a special function (UART, SPI, I2C, etc.)
+- Pins are 3.3V tolerant with 3 of them ADC capable (convert analog to digital)
+
+**USB and power supply**
+- Micro USB-B port for power and data (range of 1.8V to 5.5V; can be powered by battery)
+- USB bootloader for programming the flash memory
+
+<font size="3">Raspberry Pi Foundation. "Raspberry Pi Pico-W Datasheet." Raspberry Pi, 2024.</font>
+
+---
+
+<h2><img src="https://em-content.zobj.net/source/google/387/robot_1f916.png" width=60px> Pico W Microcontroller <span style="font-weight: normal;"> - DS Applications information (2/2) </span></h2>
+
+**Wireless interface**
+- 2.4GHz WiFi and Bluetooth 5.0 for wireless communication
+
+- ***LIMITATIONS***:
+    - Cannot use CLK and VSYS monitor at the same time
+    - Cannot check for IRQs when SPI transaction is in progress
+
+**Debugging**
+- Using the SWD (Serial Wire Debug) interface
+
+<font size="3">Raspberry Pi Foundation. "Raspberry Pi Pico-W Datasheet." Raspberry Pi, 2024.</font>
+
+
+---
+
+<h2><img src="https://em-content.zobj.net/source/google/387/memo_1f4dd.png" width=60px> Setting up the development environment <span style="font-weight: normal;"> - Hello World!</span></h2>
+
+**Steps and Demo:**
+1. **Download** and **install** the Pico C/C++ SDK from <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" width=30px>
+2. Install the **toolchain**: `CMake` and GCC cross compiler `gcc-arm-embedded` (Explain with `nix-shell`)
+3. Create a **hello_world** project and use the SDK (`pico_sdk_import.cmake` script and `CMakeLists.txt` file)
+4. Compile a simple hello world program and **flash** it to the Pico W microcontroller.
+``` C
+
+```
+
+
+
+---
+
+<h2> <img src="https://em-content.zobj.net/source/google/387/thermometer_1f321-fe0f.png" width=60px> DHT <span style="font-weight: normal;"> - Overview</span></h2>
 
 <!-- TODO various diagrams of software design -->
 
@@ -192,7 +256,6 @@ Both software and hardware/electrical engineers need to work together to design 
 **Interrupts**
 - A way for the microcontroller to respond to events in real-time.
 - The microcontroller can stop what it's doing and handle the interrupt.
-
 
 ---
 
