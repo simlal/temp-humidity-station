@@ -156,7 +156,7 @@ Both software and hardware/electrical engineers need to work together to design 
 ---
 <h2><img src="https://em-content.zobj.net/source/google/387/robot_1f916.png" width=60px> Pico W Microcontroller <span style="font-weight: normal;"> - Datasheet (DS) overview</span></h2>
 
-**Datasheet overview and Pinout** 
+<u>**Datasheet overview and Pinout** </u>
 <div style="display: flex; justify-content: space-between;">
     <div style="width: 50%;">
         <ul>
@@ -197,21 +197,23 @@ Reprogram the flash memory with a new program using the USB bootloader.
 **Wireless interface**
 - 2.4GHz WiFi and Bluetooth 5.0 for wireless communication
 
-- ***LIMITATIONS***:
-    - Cannot use CLK and VSYS monitor at the same time
-    - Cannot check for IRQs when SPI transaction is in progress
 
 **Debugging**
 - Using the SWD (Serial Wire Debug) interface
+- printf to UART0 (default) or USB CDC ACM
+
+<span style="color:red;">***LIMITATIONS***:</span>
+- <span style="color:red;">Cannot use CLK and VSYS monitor at the same time</span>
+- <span style="color:red;">Cannot check for IRQs when SPI transaction is in progress</span>
 
 <font size="3">Raspberry Pi Foundation. "Raspberry Pi Pico-W Datasheet." Raspberry Pi, 2024.</font>
 
 
 ---
 
-<h2><img src="https://em-content.zobj.net/source/google/387/memo_1f4dd.png" width=60px> Setting up the development environment <span style="font-weight: normal;">(Hello World!)</span></h2>
+<h2><img src="https://em-content.zobj.net/source/google/387/memo_1f4dd.png" width=60px> Setting up the development environment <span style="font-weight: normal;"> - Overview</span></h2>
 
-**Steps**
+<u>**Steps**</u>
 1. **Download** and **install** the Pico C/C++ SDK from <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" width=30px> including submodules
 2. Install the **toolchain**: `CMake` and GCC cross compiler `gcc-arm-embedded` (using `nix-shell`)
 3. Make a c_cpp_properties.json file for the **VSCode** IDE to recognize SDKs and includes
@@ -223,9 +225,26 @@ Reprogram the flash memory with a new program using the USB bootloader.
 
 --- 
 
+<h2><img src="https://em-content.zobj.net/source/google/387/man-technologist_1f468-200d-1f4bb.png" width=60px> Nix shell and bash automation <span style="font-weight: normal;"> (Demo!)</span></h2>
+
+<u>**Nix shell**</u>
+- A package manager that allows for reproducible builds.
+- Use a `shell.nix` file to specify the dependencies for the project.
+- Run a temporary `nix-shell` to enter the environment with the dependencies.
+
+<p style="color:green;">No need for global installations, everything is contained in the `nix-shell`.</p>
+
+<u>**Bash automation**</u>
+Automate the docs builds and project builds with bash scripts. Can be used inside the `nix-shell` environment.
+
+<u>**Marp**</u>
+A markdown presentation tool that allows for easy slide creation.
+
+---
+
 <h2><img src="https://em-content.zobj.net/source/google/387/gear_2699-fe0f.png" width=60px> Breadboard + Pico W + USB <span style="font-weight: normal;"></span></h2>
 
-**stdio over USB**
+<u>**stdio over USB**</u>
 A USB Communication Device Class (CDC) ACM virtual serial port, using TinyUSB’s CDC support. We can easily:
 - Pass compiled binary (as uf2) to the Pico W which will convert it to a binary file and flash it to the microcontroller.
 - Use the USB serial port to send and receive data from the Pico W (standard calls avail. like `printf`)
@@ -254,7 +273,7 @@ A USB Communication Device Class (CDC) ACM virtual serial port, using TinyUSB’
 - **Universal Serial Bus** (USB) is a common interface for connecting devices.
 - **CDC ACM** (Communication Device Class Abstract Control Model) is a USB class for serial communication.
 
-We will first use USB to send (binary file) and receive data (`printf`) from the Pico W microcontroller and use `minicom` to listen to data on the serial port.
+First use <span style="color:blue;">USB</span> to send (binary file) and receive data (`printf`) from the Pico W microcontroller and use `minicom` to listen to data on the <span style="color:green;">serial port.</span>
 
 ---
 <!-- Explain UART vs USB comms with pico_w.h -->
