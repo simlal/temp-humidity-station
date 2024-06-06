@@ -12,18 +12,33 @@ elif [ ! command -v arm-none-eabi-gcc &> /dev/null ]; then
   exit 1
 fi
 
+# Check for pico-sdk in workspaceFolder
+GIT_ROOT_DIR=$(git rev-parse --show-toplevel)
+if [ ! -d "$GIT_ROOT_DIR/pico-sdk" ]; then
+  echo "Pico SDK not found in the root of the project. Please clone the Pico SDK in the root of the project"
+  exit 1
+fi
+
 # Create a build dir if not exists
 if [ ! -d "build" ]; then
   mkdir build
 fi
 BUILD_DIR=build/
 
-# Get the project name
-PROJECT_NAME=$(basename $(pwd))
+# Verify that PICO_SDK_PATH and PICO_BOARD are set
+if [ -z "$PICO_SDK_PATH" ]; then
+  echo "PICO_SDK_PATH is not set. Please set the PICO_SDK_PATH environment variable"
+  exit 1
+fi
+if [ -z "$PICO_BOARD" ]; then
+  echo "PICO_BOARD is not set. Please set the PICO_BOARD environment variable"
+  exit 1
+fi
 
 # Run CMake from within build for pico_w board
 cd $BUILD_DIR
-cmake .. -DPICO_BOARD=pico_w
+cmake ..
 
 # Build the project
+PROJECT_NAME=hello_usb
 make $PROJECT_NAME
