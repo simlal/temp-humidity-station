@@ -40,7 +40,7 @@ Make a **Temperature** 🌡️ and **humidity** 💧 station with DHT22 sensor a
 :arrow_right: **Write custom C drivers** for each peripheral.
 
 <u>(Optional goal)</u> 
-Take advantage of the Pico W microcropressor's 📡 chip and write a custom **web server** in C to **display** the data on a web page.
+Take advantage of the Pico W microcropressor's 📡 chip and run a **web server** to **display** the data on a web page via local network.
 
 ---
 
@@ -88,7 +88,7 @@ Continue reading the book past the applied objectives.
 - **Finish** the DHT22 driver
 - **Write** the LCD1602 driver
 - **Integrate** the drivers and **test** the system
-- (OPTIONAL) Write a **web server** to display the data
+- (OPTIONAL) Run a **web server** to display the data
 
 ---
 
@@ -235,30 +235,77 @@ A USB Communication Device Class (CDC) ACM virtual serial port, using TinyUSB’
 <font size="3">Raspberry Pi Foundation. "Getting Started with Raspberry Pi Pico." Raspberry Pi, 2024.</font>
 
 ---
-<!-- Blink/hello_world demo -->
-<h2><img src="https://em-content.zobj.net/source/google/387/flashlight_1f526.png" width=60px> Basic breadboard with Pico W controller <span style="font-weight: normal;">(Hello World!)</span></h2>
+<h2><img src="https://em-content.zobj.net/source/google/387/flashlight_1f526.png" width=60px> Blink onboard LED via Wireless chip's GPIO <span style="font-weight: normal;"></span></h2>
 
 <img src="https://em-content.zobj.net/source/google/387/man-technologist_1f468-200d-1f4bb.png" width=200px style="display: block; margin: 0 auto;">
 
-<!-- center some p text -->
-<p style="text-align: center;">Files and project walkthrough</p>
+<p style="text-align: center;">DEMO</p>
+
+---
+<!-- input and output for helloworld via usb or uart -->
+<h2><img src="https://em-content.zobj.net/source/google/387/keyboard_2328-fe0f.png" width=60px> Input and output via USB and UART <span style="font-weight: normal;">(Hello World!)</span></h2>
+
+**UART:**
+- **Universal Asynchronous Receiver-Transmitter** (UART) is a serial communication protocol.
+- **TX** (transmit) and **RX** (receive) pins are used to send and receive data.
+- **Baud rate** is the speed of communication (bits per second).
+
+**USB:**
+- **Universal Serial Bus** (USB) is a common interface for connecting devices.
+- **CDC ACM** (Communication Device Class Abstract Control Model) is a USB class for serial communication.
+
+We will first use USB to send (binary file) and receive data (`printf`) from the Pico W microcontroller and use `minicom` to listen to data on the serial port.
+
+---
+<!-- Explain UART vs USB comms with pico_w.h -->
+<h2><img src="https://em-content.zobj.net/source/google/387/keyboard_2328-fe0f.png" width=60px> IO with Pico W's default GPIO over UART <span style="font-weight: normal;"></span></h2>
+
+Serial input (*stdin*) and output (*stdout*) can be directed to either serial UART or to USB CDC (USB serial). By default, printf target UART0 on Pico.
+<br>
+
+| UART0 | Physical Pin | GPIO Pin |
+|-------|--------------|----------|
+| GND | 3 | N/A |
+| UART0_TX (sending from Pico) | 1 | GPIO0 |
+| UART0_RX (receiving at Pico) | 2 | GPIO1 |
+
+
+<font size="5">See the macros in `/pico-sdk/src/boards/include/boards/pico.h` for the default UART pins.</font>
 
 ---
 
+<h2><img src="https://em-content.zobj.net/source/google/387/keyboard_2328-fe0f.png" width=60px> Hello World! <span style="font-weight: normal;">USB output</span></h2>
 
+
+
+<img src="https://em-content.zobj.net/source/google/387/man-technologist_1f468-200d-1f4bb.png" width=100px style="display: block; margin: 0 auto;">
+
+<p style="text-align: center;">DEMO</p>
+
+```bash
+# Compile the hello_usb project
+cd hello_usb
+./picow-build.sh
+
+# Check for the picow device with dmesg (kernel ring buffer)
+sudo dmesg -w
+
+# In a new terminal, flash the compiled binary to the Pico W
+cp build/hello_usb.uf2 /run/media/deck/RPI-RP2/
+
+# Open a serial terminal to see the output (using the dmesg output to find the device)
+RATE=115200    # The baud rate of the serial port (bits per second)
+sudo minicom -D /dev/ttyACM0 -b $RATE
+
+# USE CTL+A then X to exit minicom
+```
 ---
-<!-- Gear icon and h2 -->
-<h2><img src="https://em-content.zobj.net/source/google/387/gear_2699-fe0f.png" width=60px> Basic breadboard with Pico W controller <span style="font-weight: normal;">(Hello World!)</span></h2>
-TODO
+
+<h2 style="display: block; margin: 0 auto;"><img src="https://em-content.zobj.net/source/google/387/construction_1f6a7.png" width=60px> Project <span style="font-weight: normal;"> - To Be Continued</span></h2>
 
 ---
 
 <h2> <img src="https://em-content.zobj.net/source/google/387/thermometer_1f321-fe0f.png" width=60px> DHT <span style="font-weight: normal;"> - Overview</span></h2>
-
-<!-- TODO various diagrams of software design -->
-
----
-
 
 ---
 <!-- USE LATER -->
@@ -305,27 +352,8 @@ TODO
 
 ---
 
-
-
----
-<h2><img src="https://em-content.zobj.net/source/google/387/hammer-and-wrench_1f6e0-fe0f.png" width=60px> Tools and technology</h2>
-
-
----
-
 <h2><img src="https://em-content.zobj.net/source/google/387/clipboard_1f4cb.png" width=60px> System diagram</h2>
 
 TODO ADD STATIC FILE
 
 ---
-
-<h2><img src="https://em-content.zobj.net/source/google/387/gear_2699-fe0f.png" width=60px> Hardware Components</h2>
-
-
----
-
-<h2><img src="https://em-content.zobj.net/source/google/387/hammer-and-wrench_1f6e0-fe0f.png" width=60px> Development environment</h2>
-
----
-
-    
