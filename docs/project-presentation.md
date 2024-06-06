@@ -212,15 +212,39 @@ Reprogram the flash memory with a new program using the USB bootloader.
 <h2><img src="https://em-content.zobj.net/source/google/387/memo_1f4dd.png" width=60px> Setting up the development environment <span style="font-weight: normal;">(Hello World!)</span></h2>
 
 **Steps**
-1. **Download** and **install** the Pico C/C++ SDK from <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" width=30px>
-2. Install the **toolchain**: `CMake` and GCC cross compiler `gcc-arm-embedded` (Explain with `nix-shell`)
+1. **Download** and **install** the Pico C/C++ SDK from <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" width=30px> including submodules
+2. Install the **toolchain**: `CMake` and GCC cross compiler `gcc-arm-embedded` (using `nix-shell`)
+3. Make a c_cpp_properties.json file for the **VSCode** IDE to recognize SDKs and includes
 3. Create a **hello_usb** project by use the SDKs provided libs (configure c/cpp compiler and include in IDE)
 4. Compile with the `CMakeLists.txt` and `pico_sdk_import.cmake` scripts. Automated with custom `picow-build.sh` script.
 5. **Flash** the program to the Pico W microcontroller using the USB bootloader.
 
-**DEMO <img src="https://em-content.zobj.net/source/google/387/man-technologist_1f468-200d-1f4bb.png" width=60px>!**
-
 <font size="3">Raspberry Pi Foundation. [pico-sdk](https://github.com/raspberrypi/pico-sdk). GitHub Repository, 2024.</font>
+
+--- 
+
+<h2><img src="https://em-content.zobj.net/source/google/387/gear_2699-fe0f.png" width=60px> Breadboard + Pico W + USB <span style="font-weight: normal;"></span></h2>
+
+**stdio over USB**
+A USB Communication Device Class (CDC) ACM virtual serial port, using TinyUSB’s CDC support. We can easily:
+- Pass compiled binary (as uf2) to the Pico W which will convert it to a binary file and flash it to the microcontroller.
+- Use the USB serial port to send and receive data from the Pico W (standard calls avail. like `printf`)
+
+<img src="./img/picow_usb_led.jpg" width=400px style="display: block; margin: 0 auto;">
+
+<font size="3">Raspberry Pi Foundation. "Getting Started with Raspberry Pi Pico." Raspberry Pi, 2024.</font>
+
+---
+<!-- Blink/hello_world demo -->
+<h2><img src="https://em-content.zobj.net/source/google/387/flashlight_1f526.png" width=60px> Basic breadboard with Pico W controller <span style="font-weight: normal;">(Hello World!)</span></h2>
+
+<img src="https://em-content.zobj.net/source/google/387/man-technologist_1f468-200d-1f4bb.png" width=200px style="display: block; margin: 0 auto;">
+
+<!-- center some p text -->
+<p style="text-align: center;">Files and project walkthrough</p>
+
+---
+
 
 ---
 <!-- Gear icon and h2 -->
