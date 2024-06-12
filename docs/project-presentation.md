@@ -75,6 +75,7 @@ Take advantage of the Pico W microcropressor's 📡 chip and run a **web server*
 - Write **System diagram** and **flowchart** for the project
 - **Choosing** and **understanding** hardware
 - Setup **development environment** and **toolchain**
+- Make a **hello_usb**  and **blink** project (hello world!) 
 - Start **writing** the DHT22 driver
 
 --- 
@@ -152,6 +153,22 @@ Both software and hardware/electrical engineers need to work together to design 
 <font size="3">Adafruit. "DHT22 Temperature-Humidity Sensor." Adafruit Learning System, 2021.</font>
 <font size="3">LCD1602 Display. "LCD1602 Display." RoHS, 2021.</font>
 <font size="3">Raspberry Pi Foundation. "Raspberry Pi Pico." Raspberry Pi, 2021.</font>
+
+---
+<!-- Add a bill of material -->
+<h2><img src="https://em-content.zobj.net/source/google/387/money-bag_1f4b0.png" width=60px> Bill of materials</h2>
+
+| Component | Description | Quantity | Price (CAD) |
+|-----------|-------------|----------|-------|
+| Raspberry Pi Pico W (pre-soldered headers)| Microcontroller | 1 | $9.80 |
+| DHT22 sensor | Temperature and humidity sensor | 1 | $10.95|
+| LCD1602 display | 2.5" LCD display | 1 | $8.95 |
+| Breadboard | 830-point breadboard | 1 | $8.45 |
+| Wires/Jumper cables | Assorted wires | multiple wires | ~$10.00 |
+| Total | | | $38.15 |
+
+<font size="3">piShop.ca, 2024</font>
+
 
 ---
 <h2><img src="https://em-content.zobj.net/source/google/387/robot_1f916.png" width=60px> Pico W Microcontroller <span style="font-weight: normal;"> - Datasheet (DS) overview</span></h2>
@@ -307,10 +324,11 @@ cd hello_usb
 ./picow-build.sh
 
 # Check for the picow device with dmesg (kernel ring buffer)
+# ttyACM (USB Communication Device Class Abstract Control Model) number
 sudo dmesg -w
 
 # In a new terminal, flash the compiled binary to the Pico W
-cp build/hello_usb.uf2 /run/media/deck/RPI-RP2/
+cp build/hello_usb.uf2 /media/simlal/RPI-RP2/
 
 # Open a serial terminal to see the output (using the dmesg output to find the device)
 RATE=115200    # The baud rate of the serial port (bits per second)
