@@ -26,21 +26,56 @@ concepts of computer science. The project is based on the following requirements
 ### Personal objectives :dart:
 - [x] Introduction to software design and development on embedded systems with the Raspberry Pi Pico platform.
 - [x] Learn to read and understand datasheets and reference manuals from the sensord manufacturerd and the Raspberry Pi Pico C/C++ SDK [[2]](#2)[[3]](#3).
-- [x] Write custom C drivers for the DHT22 sensor (Repo <a href="#4"><img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" width=16/></a> [[4]](#4)) and the LCD1602 display (Repo <a href="#5"><img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" width=16> </a> [[5]](#5)). 
+- [x] Write simple C drivers for the DHT22 sensor (Repo <a href="#4"><img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" width=16/></a> [[4]](#4)) and the LCD1602 display (Repo <a href="#5"><img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" width=16> </a> [[5]](#5)). 
 - [x] Learn how to use the I2C and GPIO protocols on the Raspberry Pi Pico W.
+- [ ] Optional: Implement a webserver that handle HTTP requests to display the temperature and humidity data on a webpage. 
 
 ## Hardware components :wrench:
-- Raspberry Pi Pico W microcontroller
-- DHT22 sensor (temperature and humidity)
-- LCD1602 display
-- Breadboard
-- Jumper wires
+**Bill of materials**:
+| Component | Description | Quantity | Price (CAD) |
+|-----------|-------------|----------|-------|
+| Raspberry Pi Pico W (pre-soldered headers)| Microcontroller | 1 | $9.80 |
+| DHT22 sensor | Temperature and humidity sensor | 1 | $10.95|
+| LCD1602 display | 2.5" LCD display | 1 | $8.95 |
+| Breadboard | 830-point breadboard | 1 | $8.45 |
+| Wires/Jumper cables | Assorted wires | multiple wires | ~$10.00 |
+| Total | | | $38.15 |
 
-All materials purchased from TODO.
+
+All materials purchased from pishop.ca (May 2024).
 <!-- TODO Hardware diagram -->
 
 ## Software components :computer:
 TODO SOFTWARE DIAGRAMS
+
+## Development environment setup
+
+### Blinking LED example
+TODO
+
+### Hello World! via USB serial
+
+TODO
+
+## Main software components of weather station
+### DHT22 sensor driver
+
+TODO
+
+### LCD1602 display driver
+
+TODO
+
+### HTTP server
+
+TODO
+
+## Multi-threading and integration of components
+
+TODO
+
+## Conclusion
+TODO
 
 ## References :books:
 <!-- As numbered footnotes-->
