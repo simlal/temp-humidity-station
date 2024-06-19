@@ -1,19 +1,62 @@
 # Temperature and humidity station with DHT22 sensor and LCD1602 display on Raspberry Pi Pico W microcontroller
 
 ## Table of contents
-- [Introduction](#introduction)
-  - [Project overview](#project-overview-mag)
-  - [Assignement requirements](#assignement-requirements-memo)
-  - [Personal objectives](#personal-objectives-dart)
-- [Hardware components](#hardware-components-wrench)
-- [Software components](#software-components-computer)
-- [References](#references-books)
+
+<details>
+<summary><a href="#introduction">Introduction</a></summary>
+
+- [Assignement requirements](#assignement-requirements-memo)
+- [Personal objectives](#personal-objectives-dart)
+
+</details>
+
+<details>
+<summary><a href="#project-overview-mag">Project overview</a></summary>
+
+- [Code structure](#code-structure)
+- [Flow of operations diagram](#flow-of-operations-diagram)
+
+</details>
+
+<details>
+<summary><a href="#hardware-components-wrench">Hardware components</a></summary>
+
+</details>
+
+<details>
+<summary><a href="#development-environment-setup-hammer_and_wrench">Development environment setup</a></summary>
+
+- [Installation](#installation)
+- [Blinking LED via wireless chip](#blinking-led-via-wireless-chip)
+- [Hello World! via USB serial](#hello-world-via-usb-serial)
+
+</details>
+
+<details open>
+<summary><a href="#main-software-components-computer">Main software components</a></summary>
+
+- [DHT22 sensor driver](#dht22-sensor-driver)
+- [LCD1602 display driver](#lcd1602-display-driver)
+- [HTTP server](#http-server)
+
+</details>
+
+<details>
+<summary><a href="#multi-threading-and-hardware-integration">Multi-threading and hardware integration</a></summary>
+
+</details>
+
+<details>
+<summary><a href="#conclusion">Conclusion</a></summary>
+
+</details>
+
+<details>
+<summary><a href="#references-books">References</a></summary>
+
+</details>
 
 ## Introduction
-
-### Project overview :mag:
-Temperature :thermometer: and humidity :droplet: station with DHT22 sensor and LCD1602 display on Raspberry Pi Pico W with custom C drivers. 
-With the "Wireless" :satellite: Pico microcropressor option, it is possible to add a wireless communication protocol (Bluetooth, WiFi, etc.) to send data to a server or a smartphone.
 
 ### Assignement requirements :memo:
 This project is part of an applied portion of the a course on theoritical 
@@ -24,11 +67,26 @@ concepts of computer science. The project is based on the following requirements
 - [x] Make a presentation of the project and its theoretical and technical concepts.
 
 ### Personal objectives :dart:
-- [x] Introduction to software design and development on embedded systems with the Raspberry Pi Pico platform.
+- [x] Introduction to software design and development on embedded systems with the Raspberry Pi PicoW platform.
 - [x] Learn to read and understand datasheets and reference manuals from the sensord manufacturerd and the Raspberry Pi Pico C/C++ SDK [[2]](#2)[[3]](#3).
 - [x] Write simple C drivers for the DHT22 sensor [[4]](#4) and the LCD1602 display [[5]](#5). 
 - [x] Learn how to use the I2C and GPIO protocols on the Raspberry Pi Pico W.
 - [ ] Optional: Implement a webserver that handle HTTP requests to display the temperature and humidity data on a webpage. 
+
+## Project overview :mag:
+Temperature :thermometer: and humidity :droplet: station with DHT22 sensor and LCD1602 display on Raspberry Pi Pico W with custom C drivers. 
+With the "Wireless" :satellite: Pico microcropressor option, it is possible to add a wireless communication protocol (Bluetooth, WiFi, etc.) to send data to a server or a smartphone.
+
+### Code structure
+- Drivers code can be found inside the [drivers](./drivers) sub-directory 
+- Server component is located in the [server](./server) sub-directory.
+- `pico-sdk` is the C/C++ SDK for the Raspberry Pi Pico/PicoW [[2]](#2). Installed alongside the `tinyUSB` and wireless modules (see )
+- Examples for setup and debugging phase are located in the [examples](./examples) sub-directory.
+- `main.c` is the main file that integrates all components and runs the weather station.
+
+### Flow of operations diagram
+
+TODO
 
 ## Hardware components :wrench:
 **Bill of materials**:
@@ -45,19 +103,17 @@ concepts of computer science. The project is based on the following requirements
 All materials purchased from pishop.ca (May 2024).
 <!-- TODO Hardware diagram -->
 
-## Software components :computer:
-TODO SOFTWARE DIAGRAMS
+## Development environment setup :hammer_and_wrench:
 
-## Development environment setup
+### Installation
 
-### Blinking LED example
+### Blinking LED via wireless chip
 TODO
 
 ### Hello World! via USB serial
 
-TODO
+## Main software components :computer:
 
-## Main software components of weather station
 ### DHT22 sensor driver
 
 TODO
@@ -70,7 +126,7 @@ TODO
 
 TODO
 
-## Multi-threading and integration of components
+## Multi-threading and hardware integration
 
 TODO
 
