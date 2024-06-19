@@ -26,7 +26,7 @@ concepts of computer science. The project is based on the following requirements
 ### Personal objectives :dart:
 - [x] Introduction to software design and development on embedded systems with the Raspberry Pi Pico platform.
 - [x] Learn to read and understand datasheets and reference manuals from the sensord manufacturerd and the Raspberry Pi Pico C/C++ SDK [[2]](#2)[[3]](#3).
-- [x] Write simple C drivers for the DHT22 sensor (Repo <a href="#4"><img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" width=16/></a> [[4]](#4)) and the LCD1602 display (Repo <a href="#5"><img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" width=16> </a> [[5]](#5)). 
+- [x] Write simple C drivers for the DHT22 sensor [[4]](#4) and the LCD1602 display [[5]](#5). 
 - [x] Learn how to use the I2C and GPIO protocols on the Raspberry Pi Pico W.
 - [ ] Optional: Implement a webserver that handle HTTP requests to display the temperature and humidity data on a webpage. 
 
@@ -85,8 +85,7 @@ TODO
 
 <a id="3">[3]</a> **pico-sdk**. GitHub repository with the Raspberry Pi Pico SDK. Available at: https://github.com/raspberrypi/pico-sdk
 
-<a id="4">[4]</a> **DHT22_Pico_C-driver**. GitHub repository with the custom C driver for the DHT22 sensor. Available at: https://github.com/simlal/DHT22_Pico_C-driver
+<a id="4">[4]</a> **DHT22 PicoW C driver**. Subfolder within current repo containing driver code [:file_folder:](./dht22_picow_driver). Available at: https://github.com/simlal/temp-humidity-station/tree/main/dht22_picow_driver
 
-<a id="5">[5]</a> **LCD1602-I2C_Pico_C-driver**. GitHub repository with the custom C driver for the LCD1602 display with I2C protocol. Available at: https://github.com/simlal/LCD1602-I2C_Pico_C-driver
-
+<a id="5">[5]</a> **LCD1602 via I2C Pico C driver**. Subfolder within current repo containing driver code [:file_folder:](./lcd1602_i2c_picow_driver). Available at: https://github.com/simlal/temp-humidity-station/tree/main/lcd1602_i2c_picow_driver
 
